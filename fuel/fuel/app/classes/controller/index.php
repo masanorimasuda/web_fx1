@@ -23,50 +23,48 @@ class Controller_Index extends Controller_Template
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
 
-
-		$data["subnav"] = array('list'=> 'active' );
+		$data["subnav"] = array('rss'=> 'active' );
 		$this->template->title = 'Index &raquo; List';
 
 		$this->template->content = ViewModel::forge('index/list','view')->set('set_data',$data);
 	}
 
-	public function action_chart($year,$month,$day)
+	public function action_chart($year = '2015',$month = '01',$day = '01')
 	{
 		//css・js
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/chart.js'), array(), 'add_js', false);
 
-
 		$data["subnav"] = array('chart'=> 'active' );
 		$data["date_str"] = $year."-".$month."-".$day;
-		$this->template->title = 'Index &raquo; Chart';
 
+		$this->template->title = 'Index &raquo; Chart';
 		$this->template->content = ViewModel::forge('index/chart','view')->set('set_data',$data);
 	}
 
-	public function action_news()
+	public function action_news($year = '2015',$month = '01',$day = '01')
 	{
 		//css・js
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/news.js'), array(), 'add_js', false);
 
 		$data["subnav"] = array('news'=> 'active' );
-		$this->template->title = 'Index &raquo; News';
+		$data["date_str"] = $year."-".$month."-".$day;
 
+		$this->template->title = 'Index &raquo; News';
 		$this->template->content = ViewModel::forge('index/news','view')->set('set_data',$data);
 	}
 
-	public function action_chartnews()
+	public function action_chartnews($year = '2015',$month = '01',$day = '01')
 	{
 		//css・js
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/chartnews.js'), array(), 'add_js', false);
 
-		$data["subnav"] = array('chart_news'=> 'active' );
-		$this->template->title = 'Index &raquo; Chart news';
-		$contents = File::read_dir(DOCROOT, 2);
-		Debug::dump($contents);
+		$data["subnav"] = array('chartnews'=> 'active' );
+		$data["date_str"] = $year."-".$month."-".$day;
 
+		$this->template->title = 'Index &raquo; Chart news';
 		$this->template->content = ViewModel::forge('index/chartnews','view')->set('set_data',$data);
 	}
 
