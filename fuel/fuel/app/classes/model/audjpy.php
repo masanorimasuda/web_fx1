@@ -1,5 +1,4 @@
 <?php
-
 class Model_Audjpy extends \Orm\Model
 {
 	protected static $_properties = array(
