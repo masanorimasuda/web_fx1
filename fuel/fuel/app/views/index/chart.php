@@ -7,28 +7,29 @@
 </ul>
 <p>Chart</p>
 
-<h1><?php echo $_GET['date']; ?></h1>
+<h1><?php //echo $_GET['date']; ?></h1>
 
 
-<h2>ƒjƒ…[ƒX</h2>
+<h2>ãƒ‹ãƒ¥ãƒ¼ã‚¹</h2>
 <?php
 
 /*
-	NEWS•\¦
+	NEWSè¡¨ç¤º
 */
-$link = mysql_connect('localhost', 'root', 'makurisan');
-if (!$link) {
-    die('Ú‘±¸”s‚Å‚·B'.mysql_error());
-}
+// $link = mysql_connect('localhost', 'root', 'makurisan');
+// if (!$link) {
+//     die('æ¥ç¶šå¤±æ•—ã§ã™ã€‚'.mysql_error());
+// }
 
-$db_selected = mysql_select_db('FX', $link);
-if (!$db_selected){
-    die('ƒf[ƒ^ƒx[ƒX‘I‘ğ¸”s‚Å‚·B'.mysql_error());
-}
+// $db_selected = mysql_select_db('FX', $link);
+// if (!$db_selected){
+//     die('ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹é¸æŠå¤±æ•—ã§ã™ã€‚'.mysql_error());
+// }
 
-$strsql = "SET CHARACTER SET UTF8";
-mysql_query($strsql,$link);
+// $strsql = "SET CHARACTER SET UTF8";
+// mysql_query($strsql,$link);
 
+/*
 $setting_percent = 0.5;
 
 $currency_array = array(
@@ -41,13 +42,13 @@ $currency_array = array(
 	'NZDUSD',
 	'EURUSD'
 );
-//ƒjƒ…[ƒXˆê——
+//ãƒ‹ãƒ¥ãƒ¼ã‚¹ä¸€è¦§
 $result = mysql_query("SELECT * from news_before where date = '" .str_replace("_","-",$_GET['date']) ."'");
 
 while ($row = mysql_fetch_assoc($result)) {
 	if(strstr($row['currency'],"USD") || strstr($row['currency'],"AUD") || strstr($row['currency'],"JPY") || strstr($row['currency'],"NZD")) {
 		$attention_flag = 0;
-		if($row['attention_rate'] == "d—v“x‚") {
+		if($row['attention_rate'] == "é‡è¦åº¦é«˜") {
 			$attention_flag = 1;
 		}
 
@@ -61,17 +62,19 @@ while ($row = mysql_fetch_assoc($result)) {
 			echo "<dd>";
 			echo $row['currency'];
 			echo "</dd>";
-			echo "<dd>d—v“x@F@" .$row['attention_rate'] ."</dd>";
-			echo "<dd>ƒ^ƒCƒgƒ‹@F@" .$row['title'] ."</dd>";
-			echo "<dd>—\‘z@F@" .$row['forecast'] ."</dd>";
-			echo "<dd>Œ‹‰Ê@F@" .$row['result'] ."</dd>";
+			echo "<dd>é‡è¦åº¦ã€€ï¼šã€€" .$row['attention_rate'] ."</dd>";
+			echo "<dd>ã‚¿ã‚¤ãƒˆãƒ«ã€€ï¼šã€€" .$row['title'] ."</dd>";
+			echo "<dd>äºˆæƒ³ã€€ï¼šã€€" .$row['forecast'] ."</dd>";
+			echo "<dd>çµæœã€€ï¼šã€€" .$row['result'] ."</dd>";
 			echo "</dl>";
 		}
 	}
 }
+*/
 ?>
-<h2>15•ª‘«</h2>
+<h2>15åˆ†è¶³</h2>
 <?php
+/*
 foreach($currency_array as $key=>$value) {
 	$result = mysql_query('SELECT * from ' .$value ." WHERE date = '" .str_replace("_","-",$_GET['date']) ."'");
 
@@ -79,27 +82,32 @@ foreach($currency_array as $key=>$value) {
 		$highlow_percent = (($row['highest']-$row['lowest'])/$row['start'])*100;
 		$compare_percent = ($row['compare']/$row['start'])*100;
 	}
+*/
 ?>
 <dl style="float: left;">
-	<dt><?php echo $value; ?></dt>
-	<dd><?php echo "<img src='/img/" .$_GET['date'] ."/" .$value ."_15.png' width='400' />\n"; ?></dd>
+	<dt><?php //echo $value; ?></dt>
+	<dd><?php //echo "<img src='/img/" .$_GET['date'] ."/" .$value ."_15.png' width='400' />\n"; ?></dd>
 
 	<dt>HIGEEST - LOWEST</dt>
 	<?php
+	/*
 	if($highlow_percent >= $setting_percent || $highlow_percent <= -1 * $setting_percent) {
 		echo "<dd style='color: red;'>" .$highlow_percent ."</dd>";
 	}else {
 		echo "<dd>" .$highlow_percent ."</dd>";
 	}
+	*/
 	?>
 
 	<dt>Compare</dt>
 	<?php
+	/*
 	if($compare_percent >= $setting_percent || $compare_percent <= -1 * $setting_percent) {
 		echo "<dd style='color: red;'>" .$compare_percent ."</dd>";
 	}else {
 		echo "<dd>" .$compare_percent ."</dd>";
 	}
+	*/
 	?>
 </dl>
-<?php } ?>
+<?php //} ?>

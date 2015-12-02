@@ -1,10 +1,24 @@
 <?php
-
+/**
+ * トップページ　Constroller
+ *
+ * @package AdminPage
+ * @author masuda
+ * @since PHP 5.6
+ * @version 1.0
+ */
 class Controller_Index extends Controller_Template
 {
-//	public function before(){
-//
-//	}
+	/**
+	 * 読み込み前処理
+	 */
+	public function before()
+	{
+		parent::before();
+
+		// Asset::js(array('min_file/estateagent.js'), array(), 'add_js', false);
+	}
+
 	public function action_list()
 	{
 		$data["subnav"] = array('list'=> 'active' );
@@ -13,12 +27,16 @@ class Controller_Index extends Controller_Template
 		 * 設定
 		 ---------------------------*/
 		//マッチング条件
-		if(Input::get('matching_text','') != '' && Input::get('matching_text','') == "all") {
-			//全部表示
-			$data['all_patern'] = 'all';
-		}else if(Input::get('matching_text') != '' ) {
-			//GET
-			$data['all_patern'] = "/" .Input::get('matching_text', '')."/i";
+		if(Input::get('matching_text','') != '') {
+			switch (Input::get('matching_text','')) {
+				case 'all':
+					//全部表示
+					$data['all_patern'] = 'all';
+					break;
+				default:
+					$data['all_patern'] = "/".Input::get('matching_text', '')."/i";
+					break;
+			}
 		}else {
 			//固定
 			$data['all_patern'] = "/ムーディーズ|ドル|豪|中国|米|日本|新興国|AUD|RBA|FOMC|RBA/";
@@ -40,10 +58,9 @@ class Controller_Index extends Controller_Template
 	public function action_chart($year,$month,$day)
 	{
 		$data["subnav"] = array('chart'=> 'active' );
-
-		Debug::dump(Model_Dailydatum::get_data_bydate($year."-".$month."-".$day) );
+		$data["date_str"] = $year."-".$month."-".$day;
 		$this->template->title = 'Index &raquo; Chart';
-		$this->template->content = View::forge('index/chart', $data);
+		$this->template->content = ViewModel::forge('index/chart','view')->set('set_data',$data);
 	}
 
 	public function action_news()

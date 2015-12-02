@@ -15,9 +15,13 @@
 	));
 	?>
 
-	<style>
-		body { margin: 40px; }
-	</style>
+
+<?php
+//個々のページのcss
+echo Asset::render('add_css');
+//個々のページのjs
+echo Asset::render('add_js');
+?>
 </head>
 <body>
 	<div class="container">
