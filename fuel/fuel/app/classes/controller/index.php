@@ -1,13 +1,14 @@
 <?php
 /**
- * トップページ　Constroller
+ * 前ページ　Constroller
  *
- * @package AdminPage
+ * @package Page
  * @author masuda
  * @since PHP 5.6
  * @version 1.0
  */
-class Controller_Index extends Controller_Template
+// class Controller_Index extends Controller_Template
+class Controller_Index  extends Controller_Base
 {
 	/**
 	 * 読み込み前処理
