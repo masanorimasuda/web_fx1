@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+/*===================================================
+
+目次
+1:リセット
+2:共通スタイル
+3:グローバルレイアウト
+4:ヘッター
+5:グローバルナビ（ヘッター）
+6:フッター
+7:サイドナビ
+8:ライトコンテンツ
+
+=====================================================*/
+
+
+/* 1:リセット ---------------------------------------*/ 
+* {
+	margin: 0px;
+	padding:0px;
+	font-size: 26px;
+	line-height: 30px;
+	color: #333333;
+}
+
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #4b4d98;
+
+}
+a:hover {
+	text-decoration: underline;
+}
+/* 2:共通スタイル -----------------------------------*/
+
+img {
+	vertical-align: bottom;
+	border: none;
+}
+
+.clr {
+	clear: both;
+}
+
+/* Clearfix */
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; 
+}  
+.clearfix {  
+    display: inline-block;  
+    min-height: 1%;  
+}  
+/* Hides from IE-mac \*/  
+* html .clearfix {  
+    height: 1%;  
+}  
+.clearfix {  
+    display: block;  
+}
+/* End hide from IE-Mac */
+
+ul {
+	list-style-type: none;	
+}
+
+ul li a {
+	text-decoration: none;
+}
+
+h1,h2 {
+	margin: 16px 0;
+	font-size: 30px;
+	line-height: 36px;
+}
+/* 3:グローバルレイアウト ---------------------------*/
+#DateList li {
+	width: 50%;
+	float: left;
+	margin: 24px 0;
+}
+
+#BlockContents {
+	width: 960px;
+	margin: 0 auto;
+}
