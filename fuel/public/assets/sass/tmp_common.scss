@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+//Compassインポート
+@import "compass";
+//グラデーション(IE9)
+$experimental-support-for-svg: true;
+@import "compass/css3";
+//reset CSS
+//@import "originreset";
+
+/*
+=================================
+	変数設定
+=================================
+*/
+
+//オレンジ
+$company_color1: #eb953a;
+$company_darkcolor: #ff6803;
+//青
+$company_color2: #003559;
+$company_lightcolor2: #44688c;
+$company_darkcolor2: #002448;
+$blue_color1: #4fb0ee;
+//グレー
+$grey_color0: #eee;
+$grey_color1: #ccc;
+$grey_color2: #666;
+$grey_color3: #e6e6e6;
+//黄色
+$yellow_color1: #f8f6b4;
+//緑色
+$green_color1: #6ef571;
+
+/*
+=================================
+	mixin
+=================================
+*/
+//font-size
+@mixin fontsize($size: 16, $base: 14) {
+	font-size: $size + px;
+	font-size: ($size / $base) * 1rem;
+	line-height: ($size * 1.5) + px;
+	line-height: ($size / $base) * 1.5rem;
+}
+@mixin font_big {
+	@include fontsize(18);
+}
+@mixin font_middle {
+	@include fontsize(16);
+}
+
+@mixin font_small {
+	@include fontsize(14);
+}
+
+@mixin center_content {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+
+
+a {
+	cursor: pointer;
+}

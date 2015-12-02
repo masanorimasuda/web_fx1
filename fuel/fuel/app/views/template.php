@@ -9,10 +9,10 @@
 		'common.css',
 		'ui-lightness/jquery-ui-1.10.4.custom.css'
 	));
-	echo Asset::js(array(
-		'jquery-1.10.2.js',
-		'jquery-ui-1.10.4.custom.js'
-	));
+	// echo Asset::js(array(
+	// 	'jquery-1.10.2.js',
+	// 	'jquery-ui-1.10.4.custom.js'
+	// ));
 	?>
 
 
