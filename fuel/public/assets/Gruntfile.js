@@ -39,6 +39,9 @@ module.exports = function(grunt) {
 			// 共通CSS(tmp_common)
 			common: {
 				src : [
+					'<%= dir.css %>/bootstrap.css',
+					'<%= dir.css %>/common.css',
+					'<%= dir.css %>/ui-lightness/jquery-ui-1.10.4.custom.css',
 					'<%= dir.css %>/compile/tmp_common.css'
 				],
 				dest : '<%= dir.css %>/min_file/tmp_common.css'
@@ -46,6 +49,9 @@ module.exports = function(grunt) {
 			// list CSS
 			list: {
 				src : [
+					'<%= dir.css %>/bootstrap.css',
+					'<%= dir.css %>/common.css',
+					'<%= dir.css %>/ui-lightness/jquery-ui-1.10.4.custom.css',
 					'<%= dir.css %>/compile/list.css'
 				],
 				dest : '<%= dir.css %>/min_file/list.css'

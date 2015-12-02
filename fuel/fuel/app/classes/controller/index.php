@@ -19,7 +19,8 @@ class Controller_Index extends Controller_Template
 
 	public function action_list()
 	{
-		// js
+		//css・js
+		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
 
 
@@ -31,7 +32,8 @@ class Controller_Index extends Controller_Template
 
 	public function action_chart($year,$month,$day)
 	{
-		// js
+		//css・js
+		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/chart.js'), array(), 'add_js', false);
 
 
@@ -44,7 +46,8 @@ class Controller_Index extends Controller_Template
 
 	public function action_news()
 	{
-		// js
+		//css・js
+		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/news.js'), array(), 'add_js', false);
 
 		$data["subnav"] = array('news'=> 'active' );
@@ -55,7 +58,8 @@ class Controller_Index extends Controller_Template
 
 	public function action_chartnews()
 	{
-		// js
+		//css・js
+		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/chartnews.js'), array(), 'add_js', false);
 
 		$data["subnav"] = array('chart_news'=> 'active' );

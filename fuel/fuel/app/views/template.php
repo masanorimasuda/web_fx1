@@ -4,24 +4,16 @@
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
 	<?php
-	echo Asset::css(array(
-		'bootstrap.css',
-		'common.css',
-		'ui-lightness/jquery-ui-1.10.4.custom.css'
-	));
-	// echo Asset::js(array(
-	// 	'jquery-1.10.2.js',
-	// 	'jquery-ui-1.10.4.custom.js'
-	// ));
+	echo Asset::css(
+		array(
+			'//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' //font awesome
+		)
+	);
+	//個々のページのcss
+	echo Asset::render('add_css');
+	//個々のページのjs
+	echo Asset::render('add_js');
 	?>
-
-
-<?php
-//個々のページのcss
-echo Asset::render('add_css');
-//個々のページのjs
-echo Asset::render('add_js');
-?>
 </head>
 <body>
 	<div class="container">
