@@ -2,8 +2,6 @@
 /**
  * index/chartページ表示用ViewModel
  *
- * データ取得・データ加工
- *
  */
 class View_Index_Chart extends ViewModel {
 	public function view() {

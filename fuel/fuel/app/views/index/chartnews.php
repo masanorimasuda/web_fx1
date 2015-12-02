@@ -2,13 +2,14 @@
 	<li class='<?php echo Arr::get($subnav, "list" ); ?>'><?php echo Html::anchor('index/list','List');?></li>
 	<li class='<?php echo Arr::get($subnav, "chart" ); ?>'><?php echo Html::anchor('index/chart','Chart');?></li>
 	<li class='<?php echo Arr::get($subnav, "news" ); ?>'><?php echo Html::anchor('index/news','News');?></li>
-	<li class='<?php echo Arr::get($subnav, "chart_news" ); ?>'><?php echo Html::anchor('index/chart_news','Chart news');?></li>
+	<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('index/chart_news','Chart news');?></li>
 
 </ul>
 <p>Chart news</p>
 
 <ul id="DateList">
 <?php
+/*
 // ディレクトリハンドルの取得
 $dir_h = opendir( "./img/" ) ;
 // ファイル・ディレクトリの一覧を $file_list 配列に
@@ -31,10 +32,13 @@ foreach ( $file_list as $file_name )
 		}
 	}
 }
-
+*/
+echo Asset::img('2015_07_31/AUDJPY_15.png');
+echo DOCROOT;
 /*
 	NEWS表示
 */
+/*
 $link = mysql_connect('localhost', 'root', 'makurisan');
 if (!$link) {
     die('接続失敗です。'.mysql_error());
@@ -50,7 +54,7 @@ mysql_query($strsql,$link);
 
 
 $result = mysql_query("SELECT * from news_before where date='" .date('Y-m-d') ."'");
-
+*/
 ?>
 
 <h2>アーカイブ</h2>
@@ -59,6 +63,7 @@ $result = mysql_query("SELECT * from news_before where date='" .date('Y-m-d') ."
 
 <h2>重要ニュース</h2>
 <?php
+/*
 while ($row = mysql_fetch_assoc($result)) {
 //	if(($row['attention_rate'] == "重要度高" || $row['attention_rate'] == "重要度中") && (strstr($row['currency'],"USD")) || strstr($row['currency'],"AUD")) {
 	if($row['attention_rate'] == "重要度高" || $row['attention_rate'] == "重要度中") {
@@ -83,6 +88,7 @@ while ($row = mysql_fetch_assoc($result)) {
 //		}
 	}
 }
+*/
 ?>
 
 </ul>

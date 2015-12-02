@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+//Compassインポート
+@import "compass";
+//グラデーション(IE9)
+$experimental-support-for-svg: true;
+@import "compass/css3";
+
+
+a {
+	cursor: pointer;
+}
