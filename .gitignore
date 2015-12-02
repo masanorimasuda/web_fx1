@@ -17,5 +17,5 @@ fuel/public/assets/node_modules/*
 fuel/public/assets/bower_components/*
 fuel/public/assets/docs/*
 fuel/public/assets/.sass-cache/*
-cifo/public/upload/*
+fuel/public/assets/img/*
 !.gitkeep
