@@ -4,11 +4,10 @@
 	<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('chartnews','Chart news');?></li>
 	<li class='<?php echo Arr::get($subnav, "rss" ); ?>'><?php echo Html::anchor('rss','Rss');?></li>
 </ul>
-<p>Chart news</p>
 
-<h1><?php echo $set_date; ?></h1>
+<h1>チャート + ニュース　<?php echo $set_date; ?></h1>
 
-<h2>ニュース</h2>
+<h2>【ニュース】</h2>
 <?php
 //ニュース一覧
 foreach ($news as $key => $value) {
@@ -30,7 +29,7 @@ foreach ($news as $key => $value) {
 	}
 }
 ?>
-<h2>15分足</h2>
+<h2>【チャート　15分足】</h2>
 <?php
 foreach($currency_datas as $key=>$value) {
 	//Debug::dump($value);

@@ -4,6 +4,8 @@
 	<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('chartnews','Chart news');?></li>
 	<li class='<?php echo Arr::get($subnav, "rss" ); ?>'><?php echo Html::anchor('rss','Rss');?></li>
 </ul>
+<h1>RSS + 外部サイト</h1>
+
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">RSS</a></li>

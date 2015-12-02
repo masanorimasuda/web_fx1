@@ -6,6 +6,9 @@
 
 </ul>
 
+<h1>チャートデータ　15分足</h1>
+<h2>【アーカイブ】</h2>
+
 <?php
 // 画像ディレクトリあるだけリンク
 echo '<ul class="list-inline clearfix">';
@@ -16,9 +19,7 @@ echo '</ul>';
 ?>
 
 <div class="clearfix">
-	<h1><?php echo $set_date; ?></h1>
-
-	<h2>15分足</h2>
+	<h2>【<?php echo $set_date; ?>】</h2>
 	<?php
 
 	foreach($currency_datas as $key=>$value) {
