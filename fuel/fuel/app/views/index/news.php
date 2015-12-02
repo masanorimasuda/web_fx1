@@ -1,8 +1,41 @@
 <ul class="nav nav-pills">
-	<li class='<?php echo Arr::get($subnav, "list" ); ?>'><?php echo Html::anchor('index/list','List');?></li>
-	<li class='<?php echo Arr::get($subnav, "chart" ); ?>'><?php echo Html::anchor('index/chart','Chart');?></li>
-	<li class='<?php echo Arr::get($subnav, "news" ); ?>'><?php echo Html::anchor('index/news','News');?></li>
-	<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('index/chart_news','Chart news');?></li>
-
+	<li class='<?php echo Arr::get($subnav, "chart" ); ?>'><?php echo Html::anchor('chart','Chart');?></li>
+	<li class='<?php echo Arr::get($subnav, "news" ); ?>'><?php echo Html::anchor('news','News');?></li>
+	<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('chartnews','Chart news');?></li>
+	<li class='<?php echo Arr::get($subnav, "rss" ); ?>'><?php echo Html::anchor('rss','Rss');?></li>
 </ul>
-<p>News</p>
+
+<h1><?php echo $set_date; ?></h1>
+
+<h2>ニュース</h2>
+<?php
+// newsリンクリストあるだけ表示
+echo '<ul class="list-inline clearfix">';
+foreach ($news_datelist as $key => $value) {
+	echo '<li><i class="fa fa-line-chart"></i> '.Html::anchor('/index/news/'.str_replace('-','/',$key), $key).'</li>';
+}
+echo '</ul>';
+
+
+
+//ニュース一覧
+foreach ($news as $key => $value) {
+	if($value['attention_rate'] != "") {
+		if($value['attention_rate'] == "重要度高") {
+			echo "<dl style='border-bottom: 1px solid #ffffff;display: block;color: red;'>";
+		}else {
+			echo "<dl style='border-bottom: 1px solid #ffffff;display: block;'>";
+		}
+		echo "<dt>${value['textdate']}</dt>";
+		echo "<dd>";
+		echo "${value['currency']}";
+		echo "</dd>";
+		echo "<dd>重要度　：　${value['attention_rate']}</dd>";
+		echo "<dd>タイトル　：　${value['title']}</dd>";
+		echo "<dd>予想　：　${value['forecast']}</dd>";
+		echo "<dd>結果　：　${value['result']}</dd>";
+		echo "</dl>";
+	}
+}
+
+?>
