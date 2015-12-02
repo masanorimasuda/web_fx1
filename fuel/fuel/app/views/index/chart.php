@@ -7,7 +7,7 @@
 </ul>
 <p>Chart</p>
 
-<h1><?php //echo $_GET['date']; ?></h1>
+<h1><?php echo $set_date; ?></h1>
 
 
 <h2>ニュース</h2>
@@ -16,32 +16,9 @@
 /*
 	NEWS表示
 */
-// $link = mysql_connect('localhost', 'root', 'makurisan');
-// if (!$link) {
-//     die('接続失敗です。'.mysql_error());
-// }
-
-// $db_selected = mysql_select_db('FX', $link);
-// if (!$db_selected){
-//     die('データベース選択失敗です。'.mysql_error());
-// }
-
-// $strsql = "SET CHARACTER SET UTF8";
-// mysql_query($strsql,$link);
 
 /*
-$setting_percent = 0.5;
 
-$currency_array = array(
-	'AUDUSD',
-	'AUDJPY',
-	'USDJPY',
-	'NZDJPY',
-	'CNHJPY',
-	'EURJPY',
-	'NZDUSD',
-	'EURUSD'
-);
 //ニュース一覧
 $result = mysql_query("SELECT * from news_before where date = '" .str_replace("_","-",$_GET['date']) ."'");
 
