@@ -14,7 +14,8 @@
 	//個々のページのjs
 	echo Asset::render('add_js');
 	?>
-<meta name='robots' content='noindex,follow' />
+<meta name="description" content="FX(外国為替証拠金取引)運用補助・チャート分析サイト">
+<meta name='robots' content='noindex,follow'>
 </head>
 <body>
 	<div class="container">
