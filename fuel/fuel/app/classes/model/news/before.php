@@ -1,14 +1,16 @@
 <?php
-class Model_Audjpy extends \Orm\Model
+
+class Model_News_Before extends \Orm\Model
 {
 	protected static $_properties = array(
 		'id',
-		'start',
-		'end',
-		'compare',
-		'lowest',
-		'highest',
+		'textdate',
 		'currency',
+		'attention_rate',
+		'title',
+		'before_value',
+		'forecast',
+		'result',
 		'date',
 		'created_at',
 		'updated_at',
@@ -25,12 +27,6 @@ class Model_Audjpy extends \Orm\Model
 		),
 	);
 
-
-	public static function get_data_bydate($date) {
-		$query = DB::select()->from('audjpies')->where('date', '=', $date)->execute();
-
-		return $query->as_array();
-	}
-	protected static $_table_name = 'audjpies';
+	protected static $_table_name = 'news_befores';
 
 }

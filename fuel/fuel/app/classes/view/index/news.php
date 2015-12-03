@@ -8,6 +8,19 @@ class View_Index_News extends ViewModel {
 		$data = array();
 		$data["subnav"] = $this->set_data['subnav'];
 
+		// セットされた日にち
+		$data["set_date"] = $this->set_data['date_str'];
+
+		// news一覧取得
+		$data['news'] = Model_News_Before::find('all', array(
+			'where' => array(
+				array('date', $data["set_date"]),
+			),
+		));
+		// date一覧
+		$query = DB::select('date')->from('news_befores');
+		$data['news_datelist'] = $query->distinct()->execute()->as_array('date');
+
 		//テンプレートを変更する場合
 		$this->_view = View::forge('index/news',$data);
 	}
