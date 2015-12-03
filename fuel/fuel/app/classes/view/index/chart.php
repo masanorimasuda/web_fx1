@@ -10,18 +10,16 @@ class View_Index_Chart extends ViewModel {
 
 		// 画像ディレクトリあるだけ取得
 		$data['img_dir_list'] = File::read_dir(DOCROOT.'/assets/img', 2);
-		//Debug::dump($contents);
+		krsort($data['img_dir_list']);
 
 		// セットされた日にち
 		$data["set_date"] = $this->set_data['date_str'];
 		if($data["set_date"] == "--") {
-			$data["set_date"] = date("Y-m-d", strtotime("-1 day"  ));
-			$data['yesterday'] = date("Y-m-d", strtotime("-1 day"  ));
+			$data["set_date"] = date("Y-m-d", strtotime("-1 day -6 hours"));
+			$data['yesterday'] = date("Y-m-d", strtotime("-1 day -6 hours"));
 		}else {
 			$data['yesterday'] = $data["set_date"];
 		}
-
-
 
 		// 指定日の変動データ
 		$data["currency_datas"] = Model_Dailydatum::get_data_bydate($data["set_date"]);

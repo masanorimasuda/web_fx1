@@ -10,7 +10,8 @@ class View_Index_Today extends ViewModel {
 
 		// セットされた日にち
 		$data['set_date'] = $this->set_data['date_str'];
-		$data['yesterday'] = date("Y-m-d", strtotime("${data['set_date']} -1 day"  ));
+		$data['set_date'] = date("Y-m-d", strtotime("${data['set_date']} -6 hours"));
+		$data['yesterday'] = date("Y-m-d", strtotime("${data['set_date']} -1 day"));
 
 		// 指定日の変動データ
 		$data["currency_datas"] = Model_Dailydatum::get_data_bydate($data["yesterday"]);

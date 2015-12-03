@@ -14,6 +14,7 @@
 	//個々のページのjs
 	echo Asset::render('add_js');
 	?>
+<meta name='robots' content='noindex,follow' />
 </head>
 <body>
 	<div class="container">

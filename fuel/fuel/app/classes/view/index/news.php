@@ -20,6 +20,7 @@ class View_Index_News extends ViewModel {
 		// date一覧
 		$query = DB::select('date')->from('news_befores');
 		$data['news_datelist'] = $query->distinct()->execute()->as_array('date');
+		krsort($data['news_datelist']);
 
 		//テンプレートを変更する場合
 		$this->_view = View::forge('index/news',$data);

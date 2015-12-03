@@ -18,6 +18,7 @@ class Controller_Index  extends Controller_Base
 		parent::before();
 	}
 
+	// 本日の重要指標・前日の通貨変動
 	public function action_today()
 	{
 		//css・js
@@ -31,6 +32,7 @@ class Controller_Index  extends Controller_Base
 		$this->template->content = ViewModel::forge('index/today','view')->set('set_data',$data);
 	}
 
+	// RSSページ
 	public function action_list()
 	{
 		//css・js
@@ -38,11 +40,12 @@ class Controller_Index  extends Controller_Base
 		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
 
 		$data["subnav"] = array('rss'=> 'active' );
-		$this->template->title = 'Index &raquo; List';
+		$this->template->title = 'RSSからニュース取得・外部サイトリンク';
 
 		$this->template->content = ViewModel::forge('index/list','view')->set('set_data',$data);
 	}
 
+	// チャートページ
 	public function action_chart($year = '',$month = '',$day = '')
 	{
 		//css・js
@@ -52,10 +55,11 @@ class Controller_Index  extends Controller_Base
 		$data["subnav"] = array('chart'=> 'active' );
 		$data["date_str"] = $year."-".$month."-".$day;
 
-		$this->template->title = 'Index &raquo; Chart';
+		$this->template->title = 'チャート';
 		$this->template->content = ViewModel::forge('index/chart','view')->set('set_data',$data);
 	}
 
+	// ニュース
 	public function action_news($year = '',$month = '',$day = '')
 	{
 		//css・js
@@ -65,10 +69,11 @@ class Controller_Index  extends Controller_Base
 		$data["subnav"] = array('news'=> 'active' );
 		$data["date_str"] = $year."-".$month."-".$day;
 
-		$this->template->title = 'Index &raquo; News';
+		$this->template->title = 'ニュース';
 		$this->template->content = ViewModel::forge('index/news','view')->set('set_data',$data);
 	}
 
+	// チャート・ニュース
 	public function action_chartnews($year = '2015',$month = '01',$day = '01')
 	{
 		//css・js
@@ -78,7 +83,7 @@ class Controller_Index  extends Controller_Base
 		$data["subnav"] = array('chartnews'=> 'active' );
 		$data["date_str"] = $year."-".$month."-".$day;
 
-		$this->template->title = 'Index &raquo; Chart news';
+		$this->template->title = 'チャート・ニュース';
 		$this->template->content = ViewModel::forge('index/chartnews','view')->set('set_data',$data);
 	}
 
