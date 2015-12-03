@@ -18,6 +18,19 @@ class Controller_Index  extends Controller_Base
 		parent::before();
 	}
 
+	public function action_today()
+	{
+		//css・js
+		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
+		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
+
+		$data["subnav"] = array('today'=> 'active' );
+		$this->template->title = '本日の重要指標・前日の通貨変動';
+		$data["date_str"] = date("Y-m-d");
+
+		$this->template->content = ViewModel::forge('index/today','view')->set('set_data',$data);
+	}
+
 	public function action_list()
 	{
 		//css・js

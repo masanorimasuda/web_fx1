@@ -1,11 +1,10 @@
-<ul class="nav nav-pills">
-	<li class='<?php echo Arr::get($subnav, "chart" ); ?>'><?php echo Html::anchor('chart','Chart');?></li>
-	<li class='<?php echo Arr::get($subnav, "news" ); ?>'><?php echo Html::anchor('news','News');?></li>
-	<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('chartnews','Chart news');?></li>
-	<li class='<?php echo Arr::get($subnav, "rss" ); ?>'><?php echo Html::anchor('rss','Rss');?></li>
-</ul>
-<h1>RSS + 外部サイト</h1>
+<?php
+// グローバルナビ
+include_once "widget/gnavi1.php";
+?>
 
+
+<h1>RSS + 外部サイト</h1>
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">RSS</a></li>

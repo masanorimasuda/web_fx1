@@ -1,10 +1,7 @@
-<ul class="nav nav-pills">
-	<li class='<?php echo Arr::get($subnav, "chart" ); ?>'><?php echo Html::anchor('chart','Chart');?></li>
-	<li class='<?php echo Arr::get($subnav, "news" ); ?>'><?php echo Html::anchor('news','News');?></li>
-	<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('chartnews','Chart news');?></li>
-	<li class='<?php echo Arr::get($subnav, "rss" ); ?>'><?php echo Html::anchor('rss','Rss');?></li>
-</ul>
-
+<?php
+// グローバルナビ
+include_once "widget/gnavi1.php";
+?>
 <h1>ニュース</h1>
 
 <h2>【アーカイブ】</h2>
@@ -18,15 +15,17 @@ foreach ($news_datelist as $key => $value) {
 echo '</ul>';
 ?>
 
-<h2>【<?php echo $set_date; ?>】</h2>
+<div class="clearfix container">
+	<h2>【<?php echo $set_date; ?>】</h2>
+	<div class="row">
 <?php
 //ニュース一覧
 foreach ($news as $key => $value) {
 	if($value['attention_rate'] != "") {
 		if($value['attention_rate'] == "重要度高") {
-			echo "<dl style='border-bottom: 1px solid #ffffff;display: block;color: red;'>";
+			echo "<dl class='col-xs-12 col-sm-6 col-md-6' style='color: red;'>";
 		}else {
-			echo "<dl style='border-bottom: 1px solid #ffffff;display: block;'>";
+			echo "<dl class='col-xs-12 col-sm-6 col-md-6'>";
 		}
 		echo "<dt>${value['textdate']}</dt>";
 		echo "<dd>";
@@ -38,6 +37,7 @@ foreach ($news as $key => $value) {
 		echo "<dd>結果　：　${value['result']}</dd>";
 		echo "</dl>";
 	}
-}
+}?>
 
-?>
+	</div>
+</div>
