@@ -9,7 +9,9 @@ class View_Index_Chartnews extends ViewModel {
 		$data["subnav"] = $this->set_data['subnav'];
 
 		// セットされた日にち
-		$data["set_date"] = $this->set_data['date_str'];
+		//$data["set_date"] = $this->set_data['date_str'];
+		$data['set_date'] = date("Y-m-d");
+		$data['yesterday'] = date("Y-m-d", strtotime("-1 day"  ));
 
 		// 指定日の変動データ
 		$data["currency_datas"] = Model_Dailydatum::get_data_bydate($data["set_date"]);

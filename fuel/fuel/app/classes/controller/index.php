@@ -43,7 +43,7 @@ class Controller_Index  extends Controller_Base
 		$this->template->content = ViewModel::forge('index/list','view')->set('set_data',$data);
 	}
 
-	public function action_chart($year = '2015',$month = '01',$day = '01')
+	public function action_chart($year = '',$month = '',$day = '')
 	{
 		//css・js
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
@@ -56,7 +56,7 @@ class Controller_Index  extends Controller_Base
 		$this->template->content = ViewModel::forge('index/chart','view')->set('set_data',$data);
 	}
 
-	public function action_news($year = '2015',$month = '01',$day = '01')
+	public function action_news($year = '',$month = '',$day = '')
 	{
 		//css・js
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
