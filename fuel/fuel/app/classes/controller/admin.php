@@ -12,7 +12,12 @@ class Controller_Admin extends Controller_Base
 	public function before()
 	{
 		parent::before();
-		$data["subnav"] = array('admin'=> 'active' );
+		//css・js
+		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
+		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
+
+		//$data["subnav"] = array('admin'=> 'active' );
+		View::set_global('subnav', array('admin'=> 'active' ));
 		$this->template->title = "管理画面ログイン";
 	}
 
@@ -25,10 +30,6 @@ class Controller_Admin extends Controller_Base
 	 */
 	public function action_login()
 	{
-		//css
-		// Asset::css(array('min_file/kanri/login.css'), array(), 'add_css', false);
-		//js
-		// Asset::js(array('min_file/all.js'), array(), 'add_js', false);
 		//simpleauthを利用
 		$auth = Auth::instance('Simpleauth');
 		// Already logged in
@@ -96,13 +97,6 @@ class Controller_Admin extends Controller_Base
 	 */
 	public function action_index()
 	{
-		//css
-		// Asset::css(array(
-		// 	'min_file/kanri/admin.css',
-		// 	'//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'
-		// ), array(), 'add_css', false);
-		//js
-		// Asset::js(array('min_file/all.js'), array(), 'add_js', false);
 		$data = array();
 		$this->template->content = View::forge('admin/dashboard', $data);
 

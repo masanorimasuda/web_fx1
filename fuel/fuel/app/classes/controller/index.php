@@ -25,7 +25,8 @@ class Controller_Index extends Controller_Base
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
 
-		$data["subnav"] = array('today'=> 'active' );
+		//$data["subnav"] = array('today'=> 'active' );
+		View::set_global('subnav', array('today'=> 'active' ));
 		$this->template->title = '本日の重要指標・前日の通貨変動';
 		$data["date_str"] = date("Y-m-d");
 
@@ -39,10 +40,12 @@ class Controller_Index extends Controller_Base
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
 
-		$data["subnav"] = array('rss'=> 'active' );
+		//$data["subnav"] = array('rss'=> 'active' );
+		View::set_global('subnav', array('rss'=> 'active'));
 		$this->template->title = 'RSSからニュース取得・外部サイトリンク';
 
-		$this->template->content = ViewModel::forge('index/list','view')->set('set_data',$data);
+		//$this->template->content = ViewModel::forge('index/list','view')->set('set_data',$data);
+		$this->template->content = ViewModel::forge('index/list','view');
 	}
 
 	// チャートページ
@@ -52,7 +55,8 @@ class Controller_Index extends Controller_Base
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/chart.js'), array(), 'add_js', false);
 
-		$data["subnav"] = array('chart'=> 'active' );
+		//$data["subnav"] = array('chart'=> 'active' );
+		View::set_global('subnav', array('chart'=> 'active'));
 		$data["date_str"] = $year."-".$month."-".$day;
 
 		$this->template->title = 'チャート';
@@ -66,7 +70,8 @@ class Controller_Index extends Controller_Base
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/news.js'), array(), 'add_js', false);
 
-		$data["subnav"] = array('news'=> 'active' );
+		//$data["subnav"] = array('news'=> 'active' );
+		View::set_global('subnav', array('news'=> 'active'));
 		$data["date_str"] = $year."-".$month."-".$day;
 
 		$this->template->title = 'ニュース';
@@ -80,7 +85,8 @@ class Controller_Index extends Controller_Base
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/chartnews.js'), array(), 'add_js', false);
 
-		$data["subnav"] = array('chartnews'=> 'active' );
+		//$data["subnav"] = array('chartnews'=> 'active' );
+		View::set_global('subnav', array('chartnews'=> 'active'));
 		$data["date_str"] = $year."-".$month."-".$day;
 
 		$this->template->title = 'チャート・ニュース';

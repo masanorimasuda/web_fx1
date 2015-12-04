@@ -6,7 +6,7 @@
 class View_Index_Chartnews extends ViewModel {
 	public function view() {
 		$data = array();
-		$data["subnav"] = $this->set_data['subnav'];
+		//$data["subnav"] = $this->set_data['subnav'];
 
 		// セットされた日にち
 		//$data["set_date"] = $this->set_data['date_str'];

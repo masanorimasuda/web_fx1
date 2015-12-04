@@ -16,6 +16,7 @@ class Controller_Base extends Controller_Template {
 		parent::before();
 		//Simpleauthオブジェクト作成
 		$auth = Auth::instance('Simpleauth');
+
 		// 現在ログインしているusernameをセット(Global変数)
 		$this->current_user = $auth->check() ? Model_User::find_by_username($auth->get_screen_name()) : null;
 		View::set_global('current_user', $this->current_user);
@@ -47,35 +48,8 @@ class Controller_Base extends Controller_Template {
 					}
 				}
 				$admin_group_id = Config::get('auth.driver', 'Simpleauth') == 'Ormauth' ? 6 : 100;
-
-				if( $data['now_group_id'] < 100 ) {
-					/*
-					 * 一般ユーザ(最高管理者以外でないユーザの時)
-					*/
-					//一般ユーザはcompany/staffページへはadminページへ飛ばす
-					if(in_array(Request::active()->controller, array(
-						'Controller_Ownermypage'
-						))) {
-						Response::redirect('/admin/index');
-					}
-				}elseif($data['now_group_id'] == 100) {
-					// 管理者ユーザの時
-					if(in_array(Request::active()->controller, array(
-						'Controller_Ownermypage',
-						))) {
-						Response::redirect('/admin/index');
-					}
-				}else {
-					/*
-					 * 最高管理者ユーザの時
-					*/
-					if(in_array(Request::active()->controller, array('Controller_Ownermypage')))
-					{
-						Response::redirect('/admin/index');
-					}
-				}
-			}
- 			else
+				Response::redirect('/admin/index');
+ 			}else
 			{
 				Response::redirect('admin/login');
 			}

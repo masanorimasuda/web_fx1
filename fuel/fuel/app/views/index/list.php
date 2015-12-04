@@ -1,8 +1,3 @@
-<?php
-// グローバルナビ
-include_once "widget/gnavi1.php";
-?>
-
 <h1>RSS + 外部サイト</h1>
 <div id="tabs">
 	<ul>

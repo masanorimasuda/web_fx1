@@ -6,7 +6,7 @@
 class View_Index_List extends ViewModel {
 	public function view() {
 		$data = array();
-		$data["subnav"] = $this->set_data['subnav'];
+		//$data["subnav"] = $this->set_data['subnav'];
 
 		/* ---------------------------
 		 * 設定

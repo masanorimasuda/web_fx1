@@ -1,8 +1,3 @@
-<?php
-// グローバルナビ
-include_once "widget/gnavi1.php";
-?>
-
 <h1>チャート + ニュース　<?php echo $set_date; ?></h1>
 
 <div class="clearfix container">
