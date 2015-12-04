@@ -8,7 +8,7 @@
  * @version 1.0
  */
 // class Controller_Index extends Controller_Template
-class Controller_Index  extends Controller_Base
+class Controller_Index extends Controller_Base
 {
 	/**
 	 * 読み込み前処理

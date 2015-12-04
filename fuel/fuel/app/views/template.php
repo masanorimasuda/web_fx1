@@ -19,7 +19,6 @@
 </head>
 <body>
 	<div class="container">
-		
 		<div class="col-md-12">
 			<h1><?php echo $title; ?></h1>
 			<hr>
@@ -42,6 +41,9 @@
 		</div>
 
 		<div class="col-md-12">
+			<ul style="float: right;">
+				<li><a href="admin/login.php">ログイン</a></li>
+			</ul>
 <?php echo $content; ?>
 		</div>
 		<footer>
