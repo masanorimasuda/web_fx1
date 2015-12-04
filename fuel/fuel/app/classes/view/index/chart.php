@@ -6,7 +6,7 @@
 class View_Index_Chart extends ViewModel {
 	public function view() {
 		$data = array();
-		$data["subnav"] = $this->set_data['subnav'];
+		//$data["subnav"] = $this->set_data['subnav'];
 
 		// 画像ディレクトリあるだけ取得
 		$data['img_dir_list'] = File::read_dir(DOCROOT.'/assets/img', 2);

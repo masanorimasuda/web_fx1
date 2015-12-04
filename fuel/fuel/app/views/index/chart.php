@@ -1,8 +1,3 @@
-<?php
-// グローバルナビ
-include_once "widget/gnavi1.php";
-?>
-
 <h1>チャートデータ　15分足</h1>
 <div class="clearfix container">
 	<div class="col-sm-4">

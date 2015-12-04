@@ -1,9 +1,6 @@
-<div id="LoginWrapper">
+<div class="clearfix container">
+	<div style="width: 30%;margin: 20px auto;">
 <?php echo Form::open(array('autocomplete'=>'off')); ?>
-
-	<?php if (isset($_GET['destination'])): ?>
-		<?php echo Form::hidden('destination',$_GET['destination']); ?>
-	<?php endif; ?>
 
 	<?php if (isset($login_error)): ?>
 		<div class="error"><?php echo $login_error; ?></div>
@@ -27,7 +24,6 @@
 				</th>
 				<td>
 					<div class="input"><?php
-						//★パスワード保存を無効にする方法を要確認★
 						echo Form::password('password','',array('autocomplete'=>'off','placeholder'=>'パスワードを入力して下さい'));
 					?></div>
 					<?php if ($val->error('password')): ?>
@@ -42,5 +38,5 @@
 		</ul>
 	</div>
 <?php echo Form::close(); ?>
-
-</div><!-- /#LoginWrapper -->
+	</div>
+</div>

@@ -42,9 +42,12 @@
 
 		<div class="col-md-12">
 			<ul style="float: right;">
-				<li><a href="admin/login.php">ログイン</a></li>
+				<li><a href="/admin/login">ログイン</a></li>
 			</ul>
-<?php echo $content; ?>
+
+<?php
+include_once("widget/gnavi1.php");
+echo $content; ?>
 		</div>
 		<footer>
 <?php if(false) { ?>
