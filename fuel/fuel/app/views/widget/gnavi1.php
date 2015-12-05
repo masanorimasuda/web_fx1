@@ -1,3 +1,7 @@
+<ul style="float: right;">
+	<li class='<?php echo Arr::get($subnav, "admin" ); ?>'><?php echo Html::anchor('admin/index','ログイン');?></li>
+</ul>
+
 <ul class="nav nav-pills">
 	<li class='<?php echo Arr::get($subnav, "today" ); ?>'><?php echo Html::anchor('today','本日の重要指標・前日の通貨変動');?></li>
 	<li class='<?php echo Arr::get($subnav, "chart" ); ?>'><?php echo Html::anchor('chart','チャート');?></li>

@@ -33,7 +33,7 @@ foreach($url_array as $key=>$value) {
 				print "<tr><th>日付</th>\n";
 				print "<td>${date}</td></tr>\n";
 				print "<tr><th>タイトル</th>\n";
-				print "<td><a href='${url}'>${title}</a></td></tr>\n";
+				print "<td><a href='${url}' target='_blank'>${title}</a></td></tr>\n";
 				print '</table>';
 			}
 		}
@@ -45,26 +45,26 @@ foreach($url_array as $key=>$value) {
 	<div id="tabs-2">
 		<h2>情報サイト</h2>
 		<ul>
-			<li><a href="http://fx.minkabu.jp/">みんなの外為</a></li>
-			<li><a href="http://fxforex.seesaa.net/">羊飼いのfxブログ</a></li>
+			<li><a href="http://fx.minkabu.jp/" target="_blank">みんなの外為</a></li>
+			<li><a href="http://fxforex.seesaa.net/" target="_blank">羊飼いのfxブログ</a></li>
 		</ul>
 
 		<h2>ニュース発表</h2>
 		<ul>
-			<li><a href="http://min-fx.jp/market/indicators/">みんなのFX　経済指標カレンダー</a></li>
-			<li><a href="http://www.cyberagentfx.jp/gaikaex/mark/calendar/">サイバーエージェントFX　経済指標カレンダー</a></li>
+			<li><a href="http://min-fx.jp/market/indicators/" target="_blank">みんなのFX　経済指標カレンダー</a></li>
+			<li><a href="http://www.cyberagentfx.jp/gaikaex/mark/calendar/" target="_blank">サイバーエージェントFX　経済指標カレンダー</a></li>
 		</ul>
 
 		<h2>チャート</h2>
 		<ul>
-			<li><a href="http://netnavigate.net/kikinzoku/">金チャート</a></li>
-			<li><a href="http://www.bloomberg.co.jp/apps/cbuilder?T=jp09_&ticker1=USGG10YR%3AIND">米10年債</a></li>
-			<li><a href="http://www.gaitame.com/market/aus.html">豪政策金利</a></li>
+			<li><a href="http://netnavigate.net/kikinzoku/" target="_blank">金チャート</a></li>
+			<li><a href="http://www.bloomberg.co.jp/apps/cbuilder?T=jp09_&ticker1=USGG10YR%3AIND" target="_blank">米10年債</a></li>
+			<li><a href="http://www.gaitame.com/market/aus.html" target="_blank">豪政策金利</a></li>
 		</ul>
 
 		<h2>各社為替予想</h2>
 		<ul>
-			<li><a href="http://fx.formylife.jp/index.html">本日のfx外国為替予想／今週のfx外国為替予想</a></li>
+			<li><a href="http://fx.formylife.jp/index.html" target="_blank">本日のfx外国為替予想／今週のfx外国為替予想</a></li>
 		</ul>
 		 
 
@@ -89,7 +89,7 @@ foreach($url_array as $key=>$value) {
 				print '<tr><th>日付</th>'."\n";
 				print '<td>' .$date .'</td></tr>'."\n";
 				print '<tr><th>タイトル</th>'."\n";
-				print '<td>' .'<a href="'.$url.'">'.$title.'</a>' .'</td></tr>'."\n";
+				print '<td>' .'<a href="'.$url.'" target="_blank">'.$title.'</a>' .'</td></tr>'."\n";
 				print '</table>';
 			}
 	}

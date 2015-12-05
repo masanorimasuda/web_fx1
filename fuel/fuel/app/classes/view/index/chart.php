@@ -6,10 +6,9 @@
 class View_Index_Chart extends ViewModel {
 	public function view() {
 		$data = array();
-		//$data["subnav"] = $this->set_data['subnav'];
 
 		// 画像ディレクトリあるだけ取得
-		$data['img_dir_list'] = File::read_dir(DOCROOT.'/assets/img', 2);
+		$data['img_dir_list'] = File::read_dir(DOCROOT.'/assets/img', 1);
 		krsort($data['img_dir_list']);
 
 		// セットされた日にち
@@ -35,15 +34,14 @@ class View_Index_Chart extends ViewModel {
 		}
 
 		$data['setting_percent'] = 0.5;
-
 		// 指定日のnews一覧
 		$data['news'] = Model_News_Before::find('all', array(
 			'where' => array(
 				array('date', $this->set_data['date_str']),
 			),
 		));
-
 		//テンプレートを変更する場合
 		$this->_view = View::forge('index/chart',$data);
 	}
 }
+
