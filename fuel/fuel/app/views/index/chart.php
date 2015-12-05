@@ -6,7 +6,7 @@
 		// 画像ディレクトリあるだけリンク
 		echo '<ul class="list-inline clearfix">';
 		foreach($img_dir_list as $key=>$value) {
-			echo '<li><i class="fa fa-line-chart"></i> '.Html::anchor('/index/chart/'.str_replace('_','/',$key), $key).'</li>';
+			if($key != "0") echo '<li><i class="fa fa-line-chart"></i> '.Html::anchor('/index/chart/'.str_replace('_','/',$key), str_replace('/','',$key)).'</li>';
 		}
 		echo '</ul>';
 		?>

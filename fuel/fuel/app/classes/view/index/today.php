@@ -30,12 +30,12 @@ class View_Index_Today extends ViewModel {
 		// 指定日のnews一覧
 		$data['news'] = Model_News_Before::find('all', array(
 			'where' => array(
-				array('date', $this->set_data['date_str']),
+				array('date', $data['set_date']),
 			),
 		));
-
 
 		//テンプレートを変更する場合
 		$this->_view = View::forge('index/today',$data);
 	}
 }
+
