@@ -15,7 +15,7 @@
 	echo Asset::render('add_js');
 
 	// google anlalytics
-	include_once("./widget/analyticstracking.php");
+	include_once("widget/analyticstracking.php");
 	?>
 </head>
 <body>
@@ -43,7 +43,10 @@
 		</div>
 
 		<div class="col-md-12">
-<?php echo $content; ?>
+<?php
+	include_once("widget/gnavi1.php");
+	echo $content;
+?>
 		</div>
 		<footer>
 <?php if(false) { ?>
