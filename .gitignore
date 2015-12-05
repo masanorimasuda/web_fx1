@@ -18,4 +18,5 @@ fuel/public/assets/bower_components/*
 fuel/public/assets/docs/*
 fuel/public/assets/.sass-cache/*
 fuel/public/assets/img/*
+fuel/fuel/app/views/widget/analyticstracking.php
 !.gitkeep
