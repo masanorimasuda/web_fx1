@@ -13,12 +13,14 @@
 	echo Asset::render('add_css');
 	//個々のページのjs
 	echo Asset::render('add_js');
+
+	// google anlalytics
+	include_once("./widget/analyticstracking.php");
 	?>
-<meta name="description" content="FX(外国為替証拠金取引)運用補助・チャート分析サイト">
-<meta name='robots' content='noindex,follow'>
 </head>
 <body>
 	<div class="container">
+		
 		<div class="col-md-12">
 			<h1><?php echo $title; ?></h1>
 			<hr>
@@ -41,13 +43,7 @@
 		</div>
 
 		<div class="col-md-12">
-			<ul style="float: right;">
-				<li><a href="/admin/login">ログイン</a></li>
-			</ul>
-
-<?php
-include_once("widget/gnavi1.php");
-echo $content; ?>
+<?php echo $content; ?>
 		</div>
 		<footer>
 <?php if(false) { ?>
