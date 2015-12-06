@@ -14,8 +14,13 @@ class View_Index_Chart extends ViewModel {
 		// セットされた日にち
 		$data["set_date"] = $this->set_data['date_str'];
 		if($data["set_date"] == "--") {
-			$data["set_date"] = date("Y-m-d", strtotime("-1 day -6 hours"));
-			$data['yesterday'] = date("Y-m-d", strtotime("-1 day -6 hours"));
+			if(date("N") == 1) {
+				$data["set_date"] = date("Y-m-d", strtotime("-3 day"));
+				$data['yesterday'] = date("Y-m-d", strtotime("-3 day"));
+			}else {
+				$data["set_date"] = date("Y-m-d", strtotime("-1 day"));
+				$data['yesterday'] = date("Y-m-d", strtotime("-1 day"));
+			}
 		}else {
 			$data['yesterday'] = $data["set_date"];
 		}

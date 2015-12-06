@@ -8,8 +8,8 @@
 		<!--<li class='<?php echo Arr::get($subnav, "chartnews" ); ?>'><?php echo Html::anchor('chartnews','チャート・ニュース');?></li>-->
 		<!--<li class='<?php echo Arr::get($subnav, "setting" ); ?>'><?php echo Html::anchor('setting','設定');?></li>-->
 		<li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown">アーカイブ <b class="caret"></b></a>
-			<ul class="dropdown-menu">
+			<a  id="dropdownMenu1" class="dropdown-toggle" data-toggle="dropdown">アーカイブ <b class="caret"></b></a>
+			<ul class="dropdown-menu" aria-labelledby="sample-menu-1" style="padding: 0;margin:0;">
 				<li class='<?php echo Arr::get($subnav, "chart" ); ?>'><?php echo Html::anchor('chart','チャート');?></li>
 				<li class='<?php echo Arr::get($subnav, "news" ); ?>'><?php echo Html::anchor('news','ニュース');?></li>
 			</ul>
