@@ -20,3 +20,6 @@
 @media (min-width: 1200px) {
 	.container {max-width: none;}
 }
+.dropdown:hover > .dropdown-menu {
+	display: block;
+}
