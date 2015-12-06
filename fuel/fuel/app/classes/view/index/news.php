@@ -10,7 +10,10 @@ class View_Index_News extends ViewModel {
 
 		// セットされた日にち
 		$data["set_date"] = $this->set_data['date_str'];
-		if($data["set_date"] == "--") $data['set_date'] = date("Y-m-d", strtotime("-1 day"  ));
+		if($data["set_date"] == "--") {
+			$data['set_date'] = date("Y-m-d");
+			//$data['set_date'] = date("Y-m-d", strtotime("-1 day"  ));
+		}
 		// news一覧取得
 		$data['news'] = Model_News_Before::find('all', array(
 			'where' => array(
