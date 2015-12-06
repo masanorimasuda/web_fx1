@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
 	//実行時間計測(プラグイン)
 	require('time-grunt')(grunt);
-
 	grunt.initConfig({
 		//ディレクトリ変数
 		dir: {
