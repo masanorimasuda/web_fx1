@@ -12,11 +12,15 @@
 		?>
 	</div>
 	<div class="col-sm-8">
-		<h2>【<?php echo $set_date; ?>】</h2>
 		<div class="row">
 		<?php
-			// chart widget
-			include_once "widget/chart.php";
+			if($file_exist_flag) {
+				// chart widget
+				include_once "widget/chart.php";
+			}else {
+				echo '<h2>【チャート　15分足】<br>'.$yesterday.'</h2>';
+				echo "チャートが見つかりませんでした。";
+			}
 		?>
 		</div>
 	</div>
