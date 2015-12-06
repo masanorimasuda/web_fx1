@@ -1,4 +1,13 @@
+<h2>【チャート　15分足】<br><?php echo $yesterday; ?></h2>
 <?php
+/**
+ * 下記変数セット
+ *
+ * $yesterday
+ * $currency_datas
+ * $compare_percent
+ * $setting_percent
+ */
 			foreach($currency_datas as $key=>$value) {
 				if(array_key_exists ( 'highest' , $value )) {
 					$highlow_percent = (($value['highest'] - $value['lowest'])/$value['start'])*100;

@@ -19,7 +19,9 @@ class View_Index_Chart extends ViewModel {
 		}else {
 			$data['yesterday'] = $data["set_date"];
 		}
-
+		
+		$data['file_exist_flag'] = ( array_key_exists(str_replace("-","_",$data['yesterday']).'/' , $data['img_dir_list']) ) ? true : false;
+		
 		// 指定日の変動データ
 		$data["currency_datas"] = Model_Dailydatum::get_data_bydate($data["set_date"]);
 		if (empty($data["currency_datas"])) {
@@ -40,6 +42,7 @@ class View_Index_Chart extends ViewModel {
 				array('date', $this->set_data['date_str']),
 			),
 		));
+
 		//テンプレートを変更する場合
 		$this->_view = View::forge('index/chart',$data);
 	}
