@@ -1,4 +1,4 @@
-<h1>チャート + ニュース　<?php echo $set_date; ?></h1>
+<h1><i class="fa fa-newspaper-o"></i>&nbsp;本日の重要指標　<i class="fa fa-line-chart"></i>&nbsp;前日の変動</h1>
 
 <div class="clearfix container">
 	<div class="col-sm-4">

@@ -3,10 +3,9 @@
  * index/listページ表示用ViewModel
  *
  */
-class View_Index_List extends ViewModel {
+class View_Index_Links extends ViewModel {
 	public function view() {
 		$data = array();
-		//$data["subnav"] = $this->set_data['subnav'];
 
 		/* ---------------------------
 		 * 設定
@@ -37,6 +36,6 @@ class View_Index_List extends ViewModel {
 		$data['max'] = 10; //取得件数
 
 		//テンプレートを変更する場合
-		$this->_view = View::forge('index/list',$data);
+		$this->_view = View::forge('index/links',$data);
 	}
 }

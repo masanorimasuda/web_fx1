@@ -12,7 +12,7 @@ class View_Index_News extends ViewModel {
 		$data["set_date"] = $this->set_data['date_str'];
 		if($data["set_date"] == "--") {
 			$data['set_date'] = date("Y-m-d");
-			if(date("H") <= 6 ) $data['set_date'] = date("Y-m-d", strtotime("$data['set_date'] -6 hours"  ));
+			if( date("H") <= 6 ) $data['set_date'] = date("Y-m-d", strtotime("${data['set_date']} -6 hours") );
 		}
 		// news一覧取得
 		$data['news'] = Model_News_Before::find('all', array(

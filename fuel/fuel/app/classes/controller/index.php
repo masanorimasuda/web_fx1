@@ -64,7 +64,7 @@ class Controller_Index extends Controller_Base
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
 
-		View::set_global('subnav', array('rss'=> 'active'));
+		View::set_global('subnav', array('links'=> 'active'));
 		$this->template->title = '外部サイトリンク';
 
 		$this->template->content = ViewModel::forge('index/links','view');
