@@ -1,4 +1,4 @@
-<h2>【重要度中・高　ニュース】<br><?php echo $set_date; ?></h2>
+<h2>【重要ニュース】<br><?php echo $set_date; ?></h2>
 
 <?php
 /**
