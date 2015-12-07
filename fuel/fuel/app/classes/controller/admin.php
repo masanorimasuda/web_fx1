@@ -16,7 +16,6 @@ class Controller_Admin extends Controller_Base
 		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
 		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
 
-		//$data["subnav"] = array('admin'=> 'active' );
 		View::set_global('subnav', array('admin'=> 'hidden' ));
 		$this->template->title = "管理画面ログイン";
 	}
@@ -102,4 +101,3 @@ class Controller_Admin extends Controller_Base
 
 	}
 }
-/* End of file admin.php */

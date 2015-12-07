@@ -2,7 +2,7 @@
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">RSS</a></li>
-		<li><a href="#tabs-2">サイト</a></li>
+		<!--<li><a href="#tabs-2">サイト</a></li>-->
 		<li><a href="#tabs-3">全RSS</a></li>
 	</ul>
 	<div id="tabs-1">
@@ -42,7 +42,7 @@ foreach($url_array as $key=>$value) {
 }
 ?>
 </div>
-	<div id="tabs-2">
+<!--	<div id="tabs-2">
 		<h2>情報サイト</h2>
 		<ul>
 			<li><a href="http://fx.minkabu.jp/" target="_blank">みんなの外為</a></li>
@@ -68,14 +68,14 @@ foreach($url_array as $key=>$value) {
 		</ul>
 		 
 
-		</div>
+	</div>-->
 	<div id="tabs-3">
 <?php
 foreach($url_array as $key=>$value) {
 	$rssurl = $value;
 	$rssdata = simplexml_load_file($rssurl);
 
-	print "<h1>" .$key ."</h1>" ."\n";
+	print "<h1>${key}</h1>\n";
 
 	for ($i=0; $i<$max; $i++){
 		$title = $rssdata->channel->item[$i]->title;   // 件名
@@ -85,11 +85,11 @@ foreach($url_array as $key=>$value) {
 			$date = date("Y-m-d H:i:s", strtotime($date));
 			
 			if (strtotime($date) >= strtotime('2014-01-25 00:30:00')) {
-				print '<table border="4" width="700">' ."\n";
-				print '<tr><th>日付</th>'."\n";
-				print '<td>' .$date .'</td></tr>'."\n";
+				print "<table class='table table-striped'>\n";
+				print "<tr><th>日付</th>\n";
+				print "<td>${date}</td></tr>\n";
 				print '<tr><th>タイトル</th>'."\n";
-				print '<td>' .'<a href="'.$url.'" target="_blank">'.$title.'</a>' .'</td></tr>'."\n";
+				print "<td><a href='${url}' target='_blank'>${title}</a></td></tr>\n";
 				print '</table>';
 			}
 	}

@@ -3,7 +3,7 @@
  * index/chartページ表示用ViewModel
  *
  */
-class View_Index_Chart extends ViewModel {
+class View_Archive_Chart extends ViewModel {
 	public function view() {
 		$data = array();
 
@@ -15,17 +15,11 @@ class View_Index_Chart extends ViewModel {
 		$data["set_date"] = $this->set_data['date_str'];
 		if($data["set_date"] == "--") {
 			if(date("N") == 1) {
-				//月曜日のとき
 				$data["set_date"] = date("Y-m-d", strtotime("-3 day"));
 				$data['yesterday'] = date("Y-m-d", strtotime("-3 day"));
 			}else {
-				if(date("H") <= 6 ) {
-					$data["set_date"] = date("Y-m-d", strtotime("-1 day -6 hours"));
-					$data['yesterday'] = date("Y-m-d", strtotime("-1 day -6 hours"));
-				}else {
-					$data["set_date"] = date("Y-m-d", strtotime("-1 day"));
-					$data['yesterday'] = date("Y-m-d", strtotime("-1 day"));
-				}
+				$data["set_date"] = date("Y-m-d", strtotime("-1 day"));
+				$data['yesterday'] = date("Y-m-d", strtotime("-1 day"));
 			}
 		}else {
 			$data['yesterday'] = $data["set_date"];
@@ -55,7 +49,7 @@ class View_Index_Chart extends ViewModel {
 		));
 
 		//テンプレートを変更する場合
-		$this->_view = View::forge('index/chart',$data);
+		$this->_view = View::forge('archive/chart',$data);
 	}
 }
 
