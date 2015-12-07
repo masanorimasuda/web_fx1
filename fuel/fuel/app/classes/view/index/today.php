@@ -17,7 +17,11 @@ class View_Index_Today extends ViewModel {
 		if(date("N") == 1) {
 			$data['yesterday'] = date("Y-m-d", strtotime("${data['set_date']} -3 day"));
 		}else {
-			$data['yesterday'] = date("Y-m-d", strtotime("${data['set_date']} -1 day"));
+			if(date("H") <= 6 ) {
+				$data['yesterday'] = date("Y-m-d", strtotime("${data['set_date']} -1 day -6 hours"));
+			}else {
+				$data['yesterday'] = date("Y-m-d", strtotime("${data['set_date']} -1 day"));
+			}
 		}
 		// 指定日の変動データ
 		$data["currency_datas"] = Model_Dailydatum::get_data_bydate($data["yesterday"]);
