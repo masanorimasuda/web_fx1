@@ -25,7 +25,7 @@ class Controller_Base extends Controller_Template {
 		/*
 		 * 見られているページにより条件分岐
 		 */
-		if(in_array(Request::active()->controller, array('Controller_Index')))
+		if(in_array(Request::active()->controller, array('Controller_Index','Controller_Archive')))
 		{
 
 		}
