@@ -33,6 +33,7 @@ class Controller_Index extends Controller_Base
 		$this->template->title = '本日の重要指標・前日の通貨変動';
 		$data["date_str"] = date("Y-m-d");
 
+
 		$this->template->content = ViewModel::forge('index/today','view')->set('set_data',$data);
 	}
 

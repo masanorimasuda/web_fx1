@@ -10,3 +10,21 @@ $experimental-support-for-svg: true;
 a {
 	cursor: pointer;
 }
+
+/*
+=================================
+	レスポンシブ対応
+=================================
+*/
+@media (min-width: 768px) {
+	.container {max-width: none;}
+}
+@media (min-width: 992px) {
+	.container {max-width: none;}
+}
+@media (min-width: 1200px) {
+	.container {max-width: none;}
+}
+.dropdown:hover > .dropdown-menu {
+	display: block;
+}
