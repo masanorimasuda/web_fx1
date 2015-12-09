@@ -19,7 +19,7 @@ foreach($url_array as $key=>$value) {
 	$rssdata = simplexml_load_file($rssurl);
 
 	echo "<h1>${key}</h1>\n";
-	
+
 	for ($i=0; $i<$max; $i++){
 		$title = $rssdata->channel->item[$i]->title;   // 件名
 		if ($all_patern == "all" || preg_match($all_patern, $title)) {
