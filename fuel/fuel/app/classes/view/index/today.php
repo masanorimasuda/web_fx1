@@ -9,7 +9,7 @@ class View_Index_Today extends ViewModel {
 
 		// セットされた日にち
 		$set_date = $this->set_data['date_str'];
-		if(date("H") <= 6) {
+		if(date("H") < 6) {
 			// 6時までは前の日付のニュース
 			$data['set_date'] = date("Y-m-d", strtotime("${set_date} -6 hours"));
 		}else {
@@ -23,7 +23,7 @@ class View_Index_Today extends ViewModel {
 		}else if(date("N") == 2 && (int)date("H") <= 6) {
 			//火曜日の時で6時以内
 			$data['yesterday'] = date("Y-m-d", strtotime("${set_date} -3 day -6 hours"));
-		}else if((int)date("H") <= 6 ) {
+		}else if((int)date("H") < 6 ) {
 			$data['yesterday'] = date("Y-m-d", strtotime("${set_date} -1 day -6 hours"));
 		}else {
 			$data['yesterday'] = date("Y-m-d", strtotime("${set_date} -1 day"));

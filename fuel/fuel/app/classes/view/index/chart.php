@@ -19,7 +19,7 @@ class View_Index_Chart extends ViewModel {
 				$data["set_date"] = date("Y-m-d", strtotime("-3 day"));
 				$data['yesterday'] = date("Y-m-d", strtotime("-3 day"));
 			}else {
-				if(date("H") <= 6 ) {
+				if(date("H") < 6 ) {
 					$data["set_date"] = date("Y-m-d", strtotime("-1 day -6 hours"));
 					$data['yesterday'] = date("Y-m-d", strtotime("-1 day -6 hours"));
 				}else {
