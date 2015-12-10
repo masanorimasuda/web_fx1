@@ -4,7 +4,6 @@
 		<li><a href="#tabs-1">RSS</a></li>
 		<li><a href="#tabs-3">全RSS</a></li>
 	</ul>
-
 	<div id="tabs-1">
 		<dl class='dl-horizontal'>
 			<dt>取得日時:</dt>
@@ -13,18 +12,18 @@
 			<dt>マッチング条件:</dt>
 			<dd class='text-primary'><?php echo $all_patern; ?></dd>
 		</dl>
+
+
 <?php
 /* ---------------------------
  * 表示
  ---------------------------*/
-echo "";
-
 foreach($url_array as $key=>$value) {
 	$rssurl = $value;
 	$rssdata = simplexml_load_file($rssurl);
 
-	echo "<h1 style='border-left: 8px solid #4B4D98;'>&nbsp;${key}</h1>\n";
-	
+	echo "<h1 class='h_decoration'>&nbsp;${key}</h1>\n";
+
 	for ($i=0; $i<$max; $i++){
 		if(isset($rssdata->channel->item[$i])) {
 			$title = $rssdata->channel->item[$i]->title;   // 件名
@@ -55,7 +54,7 @@ foreach($url_array as $key=>$value) {
 	$rssurl = $value;
 	$rssdata = simplexml_load_file($rssurl);
 
-	print "<h1>&nbsp;${key}</h1>\n";
+	print "<h1 class='h_decoration'>&nbsp;${key}</h1>\n";
 
 	for ($i=0; $i<$max; $i++){
 		if(isset($rssdata->channel->item[$i])) {

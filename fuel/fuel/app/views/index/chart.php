@@ -2,7 +2,7 @@
 &nbsp;チャート　15分足</h1>
 <div class="clearfix container">
 	<div class="col-sm-3">
-		<h2>【アーカイブ】</h2>
+		<h2 class='h_decoration'>&nbsp;アーカイブ</h2>
 		<?php
 		// 画像ディレクトリあるだけリンク
 		echo '<ul class="list-inline clearfix">';
@@ -19,7 +19,7 @@
 				// chart widget
 				include_once "widget/chart.php";
 			}else {
-				echo '<h2>【チャート　15分足】<br>'.$yesterday.'</h2>';
+				echo "<h2 class='h_decoration'>&nbsp;チャート　15分足<br>${yesterday}</h2>";
 				echo "チャートが見つかりませんでした。";
 			}
 		?>

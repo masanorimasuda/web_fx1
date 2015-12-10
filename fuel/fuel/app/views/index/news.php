@@ -1,7 +1,7 @@
 <h1><i class="fa fa-newspaper-o"></i>&nbsp;ニュース</h1>
 <div class="clearfix container">
 	<div class="col-sm-3">
-		<h2>【アーカイブ】</h2>
+		<h2 class='h_decoration'>&nbsp;アーカイブ</h2>
 		<?php
 		// newsリンクリストあるだけ表示
 		echo '<ul class="list-inline clearfix">';
