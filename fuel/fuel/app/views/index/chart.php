@@ -2,7 +2,7 @@
 &nbsp;チャート　15分足</h1>
 <div class="clearfix container">
 	<div class="col-sm-3">
-		<h2 class='h_decoration'>&nbsp;アーカイブ</h2>
+		<h2 class='h_decoration'>&nbsp;日付</h2>
 		<?php
 		// 画像ディレクトリあるだけリンク
 		echo '<ul class="list-inline clearfix">';
