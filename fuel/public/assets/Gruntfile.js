@@ -36,15 +36,15 @@ module.exports = function(grunt) {
 		 --------------------------------------- */
 		cssmin: {
 			// 共通CSS(tmp_common)
-			common: {
-				src : [
-					'<%= dir.css %>/bootstrap.css',
-					'<%= dir.css %>/common.css',
-					'<%= dir.css %>/ui-lightness/jquery-ui-1.10.4.custom.css',
-					'<%= dir.css %>/compile/tmp_common.css'
-				],
-				dest : '<%= dir.css %>/min_file/tmp_common.css'
-			},
+			// common: {
+			// 	src : [
+			// 		'<%= dir.css %>/bootstrap.css',
+			// 		'<%= dir.css %>/common.css',
+			// 		'<%= dir.css %>/ui-lightness/jquery-ui-1.10.4.custom.css',
+			// 		'<%= dir.css %>/compile/tmp_common.css'
+			// 	],
+			// 	dest : '<%= dir.css %>/min_file/tmp_common.css'
+			// },
 			// list CSS
 			list: {
 				src : [
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 					'<%= dir.css %>/ui-lightness/jquery-ui-1.10.4.custom.css',
 					'<%= dir.css %>/compile/list.css'
 				],
-				dest : '<%= dir.css %>/min_file/list.css'
+				dest : '<%= dir.css %>/min_file/all.css'
 			}
 		},
 		/* -------------------------------------
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
 		------------------------------------- */
 		concat: {
 			// リストページJS
-			list: {
+			all: {
 				src: [
 					//全ページ共通JS
 					'<%= dir.js %>/jquery-1.10.2.js',
@@ -69,41 +69,41 @@ module.exports = function(grunt) {
 					'<%= dir.js %>/convert/all.js',
 					'<%= dir.js %>/convert/list.js'
 				],
-				dest: '<%= dir.js %>/compile/list.js'
-			},
-			// chartページJS
-			chart: {
-				src: [
-					//全ページ共通JS
-					'<%= dir.js %>/jquery-1.10.2.js',
-					'<%= dir.js %>/jquery-ui-1.10.4.custom.js',
-					'<%= dir.js %>/convert/all.js',
-					// '<%= dir.js %>/convert/chart.js'
-				],
-				dest: '<%= dir.js %>/compile/chart.js'
-			},
-			// chartnewsページJS
-			chartnews: {
-				src: [
-					//全ページ共通JS
-					'<%= dir.js %>/jquery-1.10.2.js',
-					'<%= dir.js %>/jquery-ui-1.10.4.custom.js',
-					'<%= dir.js %>/convert/all.js',
-					// '<%= dir.js %>/convert/chartnews.js'
-				],
-				dest: '<%= dir.js %>/compile/chartnews.js'
-			},
-			// newsページJS
-			news: {
-				src: [
-					//全ページ共通JS
-					'<%= dir.js %>/jquery-1.10.2.js',
-					'<%= dir.js %>/jquery-ui-1.10.4.custom.js',
-					'<%= dir.js %>/convert/all.js',
-					// '<%= dir.js %>/convert/news.js'
-				],
-				dest: '<%= dir.js %>/compile/news.js'
+				dest: '<%= dir.js %>/compile/all.js'
 			}
+			// chartページJS
+			// chart: {
+			// 	src: [
+			// 		//全ページ共通JS
+			// 		'<%= dir.js %>/jquery-1.10.2.js',
+			// 		'<%= dir.js %>/jquery-ui-1.10.4.custom.js',
+			// 		'<%= dir.js %>/convert/all.js',
+			// 		// '<%= dir.js %>/convert/chart.js'
+			// 	],
+			// 	dest: '<%= dir.js %>/compile/chart.js'
+			// },
+			// chartnewsページJS
+			// chartnews: {
+			// 	src: [
+			// 		//全ページ共通JS
+			// 		'<%= dir.js %>/jquery-1.10.2.js',
+			// 		'<%= dir.js %>/jquery-ui-1.10.4.custom.js',
+			// 		'<%= dir.js %>/convert/all.js',
+			// 		// '<%= dir.js %>/convert/chartnews.js'
+			// 	],
+			// 	dest: '<%= dir.js %>/compile/chartnews.js'
+			// },
+			// newsページJS
+			// news: {
+			// 	src: [
+			// 		//全ページ共通JS
+			// 		'<%= dir.js %>/jquery-1.10.2.js',
+			// 		'<%= dir.js %>/jquery-ui-1.10.4.custom.js',
+			// 		'<%= dir.js %>/convert/all.js',
+			// 		// '<%= dir.js %>/convert/news.js'
+			// 	],
+			// 	dest: '<%= dir.js %>/compile/news.js'
+			// }
 		},
 		/* -------------------------------------
 		* ファイル圧縮の設定(js)
@@ -115,6 +115,7 @@ module.exports = function(grunt) {
 			// all
 			all: {
 				files: {
+					"<%= dir.js %>/min_file/all.js" : ["<%= dir.js %>/compile/all.js"],
 					"<%= dir.js %>/min_file/list.js" : ["<%= dir.js %>/compile/list.js"],
 					"<%= dir.js %>/min_file/chart.js" : ["<%= dir.js %>/compile/chart.js"],
 					"<%= dir.js %>/min_file/chartnews.js" : ["<%= dir.js %>/compile/chartnews.js"],

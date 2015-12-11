@@ -1,4 +1,4 @@
-<h2>【チャート　15分足】<br><?php echo $yesterday; ?></h2>
+<h2 class='h_decoration'>&nbsp;チャート　15分足 / &nbsp;<?php echo $yesterday; ?></h2>
 <?php
 /**
  * 下記変数セット

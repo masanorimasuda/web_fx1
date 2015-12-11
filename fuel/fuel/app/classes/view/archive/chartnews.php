@@ -1,33 +1,34 @@
 <?php
 /**
- * index/todayページ表示用ViewModel
+ * index/chart_newsページ表示用ViewModel
  *
  */
-class View_Index_Today extends ViewModel {
+class View_Archive_Chartnews extends ViewModel {
 	public function view() {
 		$data = array();
 
-		// セットされた日にち
-		$set_date = $this->set_data['date_str'];
-		if(date("H") < 6) {
-			// 6時までは前の日付のニュース
-			$data['set_date'] = date("Y-m-d", strtotime("${set_date} -6 hours"));
-		}else {
-			$data['set_date'] = date("Y-m-d", strtotime("${set_date}"));
+		// 画像ディレクトリあるだけ取得
+		$data['img_dir_list'] = File::read_dir(DOCROOT.'/assets/img', 1);
+		krsort($data['img_dir_list']);
+
+		// サイドバー配列作成
+		$array_count = 0;
+		foreach($data['img_dir_list'] as $key_img => $value_img) {
+			$tmp_text = str_replace("/","",$key_img);
+			if($array_count == 0) {
+				// セットされた日にち
+				$set_date = ($this->set_data['date_str'] == "--") ? str_replace("_","-",$tmp_text) : $this->set_data['date_str'];
+			}
+
+			$tmp_array = explode("_",$tmp_text);
+
+			if(count($tmp_array) == 3) $data["date_list_array"][$tmp_array[0]][] = $tmp_text;
+			$array_count++;
 		}
 
 		// 日付調整
-		if(date("N") == 1) {
-			//月曜日の時
-			$data['yesterday'] = date("Y-m-d", strtotime("${set_date} -3 day"));
-		}else if(date("N") == 2 && (int)date("H") <= 6) {
-			//火曜日の時で6時以内
-			$data['yesterday'] = date("Y-m-d", strtotime("${set_date} -3 day -6 hours"));
-		}else if((int)date("H") < 6 ) {
-			$data['yesterday'] = date("Y-m-d", strtotime("${set_date} -1 day -6 hours"));
-		}else {
-			$data['yesterday'] = date("Y-m-d", strtotime("${set_date} -1 day"));
-		}
+		$data['set_date'] = date("Y-m-d", strtotime("${set_date}"));
+		$data['yesterday'] = date("Y-m-d", strtotime("${set_date}"));
 
 		// 指定日の変動データ
 		$data["currency_datas"] = Model_Dailydatum::get_data_bydate($data["yesterday"]);
@@ -50,8 +51,8 @@ class View_Index_Today extends ViewModel {
 			),
 		));
 
+
 		//テンプレートを変更する場合
-		$this->_view = View::forge('index/today',$data);
+		$this->_view = View::forge('archive/chartnews',$data);
 	}
 }
-

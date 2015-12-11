@@ -15,6 +15,11 @@ class Controller_Archive extends Controller_Base
 	public function before()
 	{
 		parent::before();
+
+		//css・js
+		Asset::css(array('min_file/all.css'), array(), 'add_css', false);
+		Asset::js(array('min_file/all.js'), array(), 'add_js', false);
+
 	}
 
 	/**
@@ -27,10 +32,6 @@ class Controller_Archive extends Controller_Base
 	 */
 	public function action_chart($year = '',$month = '',$day = '')
 	{
-		//css・js
-		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
-		Asset::js(array('min_file/chart.js'), array(), 'add_js', false);
-
 		View::set_global('subnav', array('chart'=> 'active'));
 		$data["date_str"] = $year."-".$month."-".$day;
 
@@ -43,10 +44,6 @@ class Controller_Archive extends Controller_Base
 	 */
 	public function action_news($year = '',$month = '',$day = '')
 	{
-		//css・js
-		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
-		Asset::js(array('min_file/news.js'), array(), 'add_js', false);
-
 		View::set_global('subnav', array('news'=> 'active'));
 		$data["date_str"] = $year."-".$month."-".$day;
 
@@ -62,12 +59,8 @@ class Controller_Archive extends Controller_Base
 	 * @param  string 日2桁テキスト
 	 * @return [type]
 	 */
-	public function action_chartnews($year = '2015',$month = '01',$day = '01')
+	public function action_chartnews($year = '',$month = '',$day = '')
 	{
-		//css・js
-		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
-		Asset::js(array('min_file/chartnews.js'), array(), 'add_js', false);
-
 		View::set_global('subnav', array('chartnews'=> 'active'));
 		$data["date_str"] = $year."-".$month."-".$day;
 

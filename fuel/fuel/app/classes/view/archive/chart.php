@@ -11,15 +11,29 @@ class View_Archive_Chart extends ViewModel {
 		$data['img_dir_list'] = File::read_dir(DOCROOT.'/assets/img', 1);
 		krsort($data['img_dir_list']);
 
+		// サイドバー配列作成
+		foreach($data['img_dir_list'] as $key_img => $value_img) {
+			$tmp_text = str_replace("/","",$key_img);
+			$tmp_array = explode("_",$tmp_text);
+
+			if(count($tmp_array) == 3) $data["date_list_array"][$tmp_array[0]][] = $tmp_text;
+		}
+
 		// セットされた日にち
 		$data["set_date"] = $this->set_data['date_str'];
 		if($data["set_date"] == "--") {
 			if(date("N") == 1) {
+				//月曜日のとき
 				$data["set_date"] = date("Y-m-d", strtotime("-3 day"));
 				$data['yesterday'] = date("Y-m-d", strtotime("-3 day"));
 			}else {
-				$data["set_date"] = date("Y-m-d", strtotime("-1 day"));
-				$data['yesterday'] = date("Y-m-d", strtotime("-1 day"));
+				if(date("H") < 6 ) {
+					$data["set_date"] = date("Y-m-d", strtotime("-1 day -6 hours"));
+					$data['yesterday'] = date("Y-m-d", strtotime("-1 day -6 hours"));
+				}else {
+					$data["set_date"] = date("Y-m-d", strtotime("-1 day"));
+					$data['yesterday'] = date("Y-m-d", strtotime("-1 day"));
+				}
 			}
 		}else {
 			$data['yesterday'] = $data["set_date"];
