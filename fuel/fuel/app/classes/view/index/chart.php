@@ -11,6 +11,14 @@ class View_Index_Chart extends ViewModel {
 		$data['img_dir_list'] = File::read_dir(DOCROOT.'/assets/img', 1);
 		krsort($data['img_dir_list']);
 
+		// サイドバー配列作成
+		foreach($data['img_dir_list'] as $key_img => $value_img) {
+			$tmp_text = str_replace("/","",$key_img);
+			$tmp_array = explode("_",$tmp_text);
+
+			if(count($tmp_array) == 3) $data["date_list_array"][$tmp_array[0]][] = $tmp_text;
+		}
+
 		// セットされた日にち
 		$data["set_date"] = $this->set_data['date_str'];
 		if($data["set_date"] == "--") {

@@ -26,6 +26,12 @@ class View_Index_News extends ViewModel {
 		$data['news_datelist'] = $query->distinct()->execute()->as_array('date');
 		krsort($data['news_datelist']);
 
+
+		foreach($data['news_datelist'] as $key=>$value) {
+			$tmp_array = explode("-",$key);
+			if(count($tmp_array) == 3) $data["news_list_array"][$tmp_array[0]][] = $key;
+		}
+
 		//テンプレートを変更する場合
 		$this->_view = View::forge('index/news',$data);
 	}

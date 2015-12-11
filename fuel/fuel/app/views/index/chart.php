@@ -5,11 +5,14 @@
 		<h2 class='h_decoration'>&nbsp;日付</h2>
 		<?php
 		// 画像ディレクトリあるだけリンク
-		echo '<ul class="list-inline clearfix">';
-		foreach($img_dir_list as $key=>$value) {
-			if($key != "0") echo '<li style="padding: 10px;"><i class="fa fa-line-chart"></i> '.Html::anchor('/index/chart/'.str_replace('_','/',$key), str_replace('/','',$key)).'</li>';
+		foreach($date_list_array as $key=>$value) {
+			echo "<h3 class='year_toggle'><i class='fa fa-arrow-circle-o-down'></i>&nbsp;<a>${key}</a></h3>";
+			echo '<ul class="list-inline clearfix"style="display: none;">';
+			foreach($value as $key_in => $value_in) {
+				echo '<li style="padding: 10px;"><i class="fa fa-line-chart"></i> '.Html::anchor('/index/chart/'.str_replace('_','/',$value_in), str_replace('/','',$value_in)).'</li>';
+			}
+			echo '</ul>';
 		}
-		echo '</ul>';
 		?>
 	</div>
 	<div class="col-sm-9">
