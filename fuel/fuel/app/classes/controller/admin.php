@@ -13,8 +13,8 @@ class Controller_Admin extends Controller_Base
 	{
 		parent::before();
 		//css・js
-		Asset::css(array('min_file/list.css'), array(), 'add_css', false);
-		Asset::js(array('min_file/list.js'), array(), 'add_js', false);
+		Asset::css(array('min_file/all.css'), array(), 'add_css', false);
+		Asset::js(array('min_file/all.js'), array(), 'add_js', false);
 
 		View::set_global('subnav', array('admin'=> 'hidden' ));
 		$this->template->title = "管理画面ログイン";
