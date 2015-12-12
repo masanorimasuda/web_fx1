@@ -247,8 +247,8 @@ module.exports = function(grunt) {
 	// タスク定義
 	// ======================================
 	// css/js全工程
-	grunt.registerTask('css_js', ['coffee','compass','cssmin','concat','uglify','clean:delete_tmp']);
-	// grunt.registerTask('css_js', ['coffee','compass','cssmin','concat','uglify']);
+	// grunt.registerTask('css_js', ['coffee','compass','cssmin','concat','uglify','clean:delete_tmp']);
+	grunt.registerTask('css_js', ['coffee','compass','cssmin','concat','uglify']);
 	// sprite画像生成
 	grunt.registerTask('sprite', ['sprite:all']);
 
