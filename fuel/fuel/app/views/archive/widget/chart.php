@@ -7,6 +7,7 @@
  * $currency_datas
  * $compare_percent
  * $setting_percent
+ * $chart_news_array(ニュース配列)
  */
 			foreach($currency_datas as $key=>$value) {
 				if(array_key_exists ( 'highest' , $value )) {
@@ -16,10 +17,53 @@
 			?>
 			<dl class="col-xs-12 col-sm-12 col-md-6">
 				<dt><?php echo $value['currency']; ?></dt>
-				<dd><?php
+				<dd class="clearfix">
+					<?php
+					switch($value['currency']){
+						case "AUDJPY":
+						case "AUDUSD":
+							$key_text = "AUD";
+							break;
+						case "USDJPY":
+							$key_text = "USD";
+							break;
+						case "NZDJPY":
+						case "NZDUSD":
+							$key_text = "NZD";
+							break;
+						case "CNHJPY":
+							$key_text = "CNH";
+							break;
+						case "EURJPY":
+						case "EURUSD":
+							$key_text = "EUR";
+							break;
+					}
+					//ニュース一覧
+					if(isset($chart_news_array[$key_text])) {
+						foreach ($chart_news_array[$key_text] as $key_news => $value_news) {
+							if($value_news['attention_rate'] == "重要度高") {
+								echo "<dl style='color: red;float: left;'>";
+							}else {
+								echo "<dl style='float: left;'>";
+							}
+							echo "<dt>${value_news['textdate']}</dt>";
+							echo "<dd>【${value_news['currency']}】";
+							echo "</dd>";
+							echo "<dd>【重要度】${value_news['attention_rate']}</dd>";
+							echo "<dd>【タイトル】${value_news['title']}</dd>";
+							echo "<dd>【予想】${value_news['forecast']}</dd>";
+							echo "<dd>【結果】${value_news['result']}</dd>";
+							echo "</dl>";
+						}
+					}
+
+
 					$tmp_text = str_replace('-','_',"/assets/img/${yesterday}/${value['currency']}");
-					echo "<img src='${tmp_text}_15.png' width='400' />\n";
-				?></dd>
+					echo "<img src='${tmp_text}_15.png' width='400' />";
+
+				?>
+				</dd>
 			</dl>
 			<table class="col-xs-12 col-sm-12 col-md-6 table table-striped table-bordered">
 				<tr>

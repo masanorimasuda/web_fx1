@@ -51,6 +51,21 @@ class View_Archive_Chartnews extends ViewModel {
 			),
 		));
 
+		$data["chart_news_array"] = array();
+		$rep_array = array(" "," "); // キーで置換する配列
+		foreach($data['news'] as $key => $value) {
+			if($value['attention_rate'] !="") {
+				$data["chart_news_array"][str_replace($rep_array,"",$value['currency'])][] = array(
+					'attention_rate' => $value['attention_rate'],
+					'textdate' => $value['textdate'],
+					'currency' => $value['currency'],
+					'attention_rate' => $value['attention_rate'],
+					'title' => $value['title'],
+					'forecast' => $value['forecast'],
+					'result' => $value['result']
+				);
+			}
+		}
 
 		//テンプレートを変更する場合
 		$this->_view = View::forge('archive/chartnews',$data);
