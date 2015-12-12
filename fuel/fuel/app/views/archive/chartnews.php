@@ -1,9 +1,9 @@
-<h1><i class="fa fa-newspaper-o"></i>&nbsp;本日の重要指標　<i class="fa fa-line-chart"></i>&nbsp;前日の変動</h1>
+<h1><i class="fa fa-line-chart"></i>&nbsp;チャート分析（チャート・ニュース）</h1>
 
 <div class="clearfix container">
 	<div class="col-sm-4">
 		<div class="row">
-			<h2 class='h_decoration'>&nbsp;日付</h2>
+			<h2 class='h_decoration'>&nbsp;日付選択</h2>
 			<?php
 			// 画像ディレクトリあるだけリンク
 			foreach($date_list_array as $key=>$value) {
@@ -19,12 +19,6 @@
 	</div>
 	<div class="col-sm-8">
 		<div class="row">
-			<div class="clearfix">
-				<?php
-				// news
-				include_once "widget/news.php";
-				?>
-			</div>
 			<div class="clearfix">
 				<?php
 				// chart widget
