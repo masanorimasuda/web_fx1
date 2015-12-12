@@ -21,7 +21,7 @@
 <body>
 	<div class="container">
 		
-		<div class="col-md-12">
+		<div class="col-md-12 clearfix">
 			<h1><?php echo $title; ?></h1>
 			<hr>
 <?php if (Session::get_flash('success')): ?>
@@ -41,7 +41,6 @@
 			</div>
 <?php endif; ?>
 		</div>
-
 		<div class="col-md-12">
 <?php
 	include_once("widget/gnavi1.php");
