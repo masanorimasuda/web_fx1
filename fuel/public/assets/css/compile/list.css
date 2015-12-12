@@ -31,3 +31,9 @@ a {
 .dropdown:hover > .dropdown-menu {
   display: block;
 }
+
+/* line 32, ../../sass/list.scss */
+.h_decoration {
+  border-left: 5px solid #4B4D98;
+  padding-left: 5px;
+}
