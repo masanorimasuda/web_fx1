@@ -1,6 +1,7 @@
-<ul style="float: right;">
-	<li class='<?php echo Arr::get($subnav, "admin" ); ?>'><?php echo Html::anchor('admin/index','<i class="fa fa-sign-in"></i>&nbsp;ログイン');?></li>
-</ul>
+	<ul style="float: right;width: 100%;text-align: right;">
+				<li class='<?php echo Arr::get($subnav, "admin" ); ?>'><?php echo Html::anchor('admin/index','<i class="fa fa-sign-in"></i>&nbsp;ログイン');?></li>
+	</ul>
+
 
 	<ul class="nav nav-pills">
 		<li class='<?php echo Arr::get($subnav, "today" ); ?>'><?php echo Html::anchor('today','<i class="fa fa-newspaper-o"></i>&nbsp;本日の重要指標・<i class="fa fa-line-chart"></i>&nbsp;前日の通貨変動');?></li>
